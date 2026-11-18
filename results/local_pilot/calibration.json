@@ -1,0 +1,25 @@
+{
+  "entropy": {
+    "mean": 0.026737072600742366,
+    "std": 0.025878031102347175,
+    "n_tokens": 512
+  },
+  "margin": {
+    "mean": 6.176404240721149,
+    "std": 2.729149600616469,
+    "n_tokens": 512
+  },
+  "source": {
+    "source_url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/train.jsonl",
+    "split": "train",
+    "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "seed": 17,
+    "sample_ids": [
+      "gsm8k_train_515",
+      "gsm8k_train_5434",
+      "gsm8k_train_6328",
+      "gsm8k_train_1299"
+    ]
+  },
+  "note": "Statistics of smoothed per-token uncertainty from disjoint GSM8K training examples"
+}

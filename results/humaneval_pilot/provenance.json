@@ -1,0 +1,19 @@
+{
+  "dataset_url": "https://raw.githubusercontent.com/openai/human-eval/master/data/HumanEval.jsonl.gz",
+  "dataset_sha256": "b796127e635a67f93fb35c04f4cb03cf06f38c8072ee7cee8833d7bee06979ef",
+  "extraction_correction": {
+    "reason": "Remove Markdown opening fence even when a truncated completion has no closing fence. No generated Python logic was changed.",
+    "changed_records": [
+      {
+        "task_id": "HumanEval/113",
+        "mode": "fp16",
+        "new_execution_hash": "8c3764b385cf69c758546edcb279bd9e047dd452d39a39f115059186b3b6d8fa"
+      },
+      {
+        "task_id": "HumanEval/151",
+        "mode": "uniform2",
+        "new_execution_hash": "7603cb7007cbc28c3b62348b8568f20976a0ab7cfb319b22fc4449a592f7af68"
+      }
+    ]
+  }
+}

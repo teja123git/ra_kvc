@@ -1,0 +1,20 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "device": "auto",
+  "threads": 4,
+  "seed": 17,
+  "samples": 20,
+  "calibration_samples": 4,
+  "max_new_tokens": 512,
+  "calibration_max_new_tokens": 128,
+  "group_size": 32,
+  "sink_tokens": 8,
+  "recent_tokens": 32,
+  "target_fraction": 0.125,
+  "smoothing": 0.3,
+  "modes": [
+    "fp16"
+  ],
+  "study_label": "Post-pilot generation-length diagnostic on the same 20 GSM8K IDs; unquantized reference only"
+}

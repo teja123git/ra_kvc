@@ -1,0 +1,2 @@
+mode,label,n,correct,accuracy,ci95_low,ci95_high,effective_bits_including_overhead,mean_estimated_cache_KiB,mean_actual_cache_KiB,mean_payload_KiB,mean_metadata_KiB,mean_floating_buffers_KiB,mean_generated_tokens,truncated,missing_answer,mean_seconds,boosted_fraction_all_quantized,boosted_fraction_generated,generated_blocks,requests_with_generated_blocks
+fp16,Unquantized,20,10,0.5,0.2992949144298199,0.7007050855701801,16.0,4830.6,9661.2,0.0,0.0,4830.6,306.6,1,1,37.881545034249996,0,0,0,0

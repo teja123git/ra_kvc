@@ -1,0 +1,11 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "tests_run": 16,
+  "failures": 0,
+  "errors": 0,
+  "status": "passed",
+  "framework": "unittest",
+  "model_integration": "Random Qwen2 model; cache/no-cache equivalence and quantized-cache effect on logits",
+  "environment": "Python 3.12, PyTorch 2.6.0+cpu, Transformers 4.46.3",
+  "scope": "Quantization, causal credit bounds, cache integration, numeric scoring, code-fence extraction and paired statistics"
+}

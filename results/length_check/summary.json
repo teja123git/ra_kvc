@@ -1,0 +1,98 @@
+{
+  "status": "complete",
+  "completed_paired_questions": 20,
+  "planned_questions": 20,
+  "manifest": {
+    "created_utc": "2026-11-18T11:51:01.155251+00:00",
+    "config": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "device": "auto",
+      "threads": 4,
+      "seed": 17,
+      "samples": 20,
+      "calibration_samples": 4,
+      "max_new_tokens": 512,
+      "calibration_max_new_tokens": 128,
+      "group_size": 32,
+      "sink_tokens": 8,
+      "recent_tokens": 32,
+      "target_fraction": 0.125,
+      "smoothing": 0.3,
+      "modes": [
+        "fp16"
+      ],
+      "study_label": "Post-pilot generation-length diagnostic on the same 20 GSM8K IDs; unquantized reference only"
+    },
+    "config_sha256": "ca84309446300ab0ed99cf0749dc905bfd3b0d8c9e524f36fcddf81d70389355",
+    "dataset": {
+      "source_url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl",
+      "split": "test",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "seed": 17,
+      "sample_ids": [
+        "gsm8k_test_1225",
+        "gsm8k_test_151",
+        "gsm8k_test_548",
+        "gsm8k_test_93",
+        "gsm8k_test_717",
+        "gsm8k_test_1242",
+        "gsm8k_test_737",
+        "gsm8k_test_714",
+        "gsm8k_test_1289",
+        "gsm8k_test_631",
+        "gsm8k_test_851",
+        "gsm8k_test_145",
+        "gsm8k_test_945",
+        "gsm8k_test_440",
+        "gsm8k_test_555",
+        "gsm8k_test_368",
+        "gsm8k_test_1020",
+        "gsm8k_test_1005",
+        "gsm8k_test_248",
+        "gsm8k_test_954"
+      ]
+    },
+    "torch": "2.6.0+cpu",
+    "transformers": "4.46.3",
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "device": "cpu",
+    "dtype": "torch.float32",
+    "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "model_dimensions": {
+      "layers": 24,
+      "kv_heads": 2,
+      "head_dim": 64
+    },
+    "notes": "Fake quantization. Estimated packed storage is separate from actual memory. CPU unquantized reference uses float32."
+  },
+  "methods": [
+    {
+      "mode": "fp16",
+      "label": "Unquantized",
+      "n": 20,
+      "correct": 10,
+      "accuracy": 0.5,
+      "ci95_low": 0.2992949144298199,
+      "ci95_high": 0.7007050855701801,
+      "effective_bits_including_overhead": 16.0,
+      "mean_estimated_cache_KiB": 4830.6,
+      "mean_actual_cache_KiB": 9661.2,
+      "mean_payload_KiB": 0.0,
+      "mean_metadata_KiB": 0.0,
+      "mean_floating_buffers_KiB": 4830.6,
+      "mean_generated_tokens": 306.6,
+      "truncated": 1,
+      "missing_answer": 1,
+      "mean_seconds": 37.881545034249996,
+      "boosted_fraction_all_quantized": 0,
+      "boosted_fraction_generated": 0,
+      "generated_blocks": 0,
+      "requests_with_generated_blocks": 0
+    }
+  ],
+  "paired_comparisons": {},
+  "scoring": "Numeric exact match; explicit answer preferred. Truncated outputs without explicit final answers count as incorrect.",
+  "interpretation": "Exploratory evidence. Storage is projected, runtime is simulation overhead. Differences in realized budgets and lengths prevent an automatic equal-memory superiority claim."
+}

@@ -1,0 +1,45 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "device": "auto",
+    "threads": 2,
+    "seed": 17,
+    "samples": 20,
+    "calibration_samples": 4,
+    "max_new_tokens": 192,
+    "calibration_max_new_tokens": 128,
+    "group_size": 32,
+    "sink_tokens": 8,
+    "recent_tokens": 32,
+    "target_fraction": 0.125,
+    "smoothing": 0.3,
+    "modes": [
+      "fp16",
+      "uniform2",
+      "fixed",
+      "entropy",
+      "margin",
+      "random"
+    ],
+    "study_label": "Exploratory CPU pilot on 20 predetermined GSM8K test questions"
+  },
+  "task_ids": [
+    "HumanEval/149",
+    "HumanEval/139",
+    "HumanEval/131",
+    "HumanEval/101",
+    "HumanEval/72",
+    "HumanEval/113",
+    "HumanEval/117",
+    "HumanEval/151"
+  ],
+  "modes": [
+    "fp16",
+    "uniform2",
+    "fixed",
+    "entropy"
+  ],
+  "prompt_style": "Chat, complete Python function, code only",
+  "calibration": "GSM8K train signals reused without HumanEval tuning"
+}

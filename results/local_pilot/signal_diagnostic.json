@@ -1,0 +1,89 @@
+{
+  "n_blocks": 8,
+  "n_questions": 4,
+  "pearson_entropy_vs_kl_reduction": -0.2716205563559925,
+  "pearson_margin_vs_kl_reduction": 0.16990114744663987,
+  "records": [
+    {
+      "id": "gsm8k_train_515",
+      "start": 136,
+      "end": 168,
+      "entropy": 0.03600010058529249,
+      "margin": 4.644828012825442,
+      "kl_uniform2": 9.087876833291375e-07,
+      "kl_boost25": 1.115052782552084e-05,
+      "kl_reduction": -1.0241740142191702e-05
+    },
+    {
+      "id": "gsm8k_train_515",
+      "start": 168,
+      "end": 200,
+      "entropy": 0.059822614550136786,
+      "margin": 3.999855674183674,
+      "kl_uniform2": 0.008419140242040157,
+      "kl_boost25": 0.007847221568226814,
+      "kl_reduction": 0.000571918673813343
+    },
+    {
+      "id": "gsm8k_train_5434",
+      "start": 104,
+      "end": 136,
+      "entropy": 0.024586722433135186,
+      "margin": 6.182176200880029,
+      "kl_uniform2": 0.07665947079658508,
+      "kl_boost25": 0.06476094573736191,
+      "kl_reduction": 0.011898525059223175
+    },
+    {
+      "id": "gsm8k_train_5434",
+      "start": 136,
+      "end": 168,
+      "entropy": 0.013732686994492649,
+      "margin": 6.71959472077537,
+      "kl_uniform2": 4.271413854439743e-05,
+      "kl_boost25": 3.2039617508416995e-05,
+      "kl_reduction": 1.0674521035980433e-05
+    },
+    {
+      "id": "gsm8k_train_6328",
+      "start": 104,
+      "end": 136,
+      "entropy": 0.032888009734852716,
+      "margin": 4.301094439647237,
+      "kl_uniform2": 6.541760376421735e-05,
+      "kl_boost25": 5.646154750138521e-05,
+      "kl_reduction": 8.956056262832135e-06
+    },
+    {
+      "id": "gsm8k_train_6328",
+      "start": 136,
+      "end": 168,
+      "entropy": 0.012088573796925482,
+      "margin": 7.52261727344352,
+      "kl_uniform2": 0.004717653151601553,
+      "kl_boost25": 0.0002451150503475219,
+      "kl_reduction": 0.004472538101254031
+    },
+    {
+      "id": "gsm8k_train_1299",
+      "start": 168,
+      "end": 200,
+      "entropy": 0.013851993469866165,
+      "margin": 6.940566302072877,
+      "kl_uniform2": 0.027858570218086243,
+      "kl_boost25": 0.009383901953697205,
+      "kl_reduction": 0.018474668264389038
+    },
+    {
+      "id": "gsm8k_train_1299",
+      "start": 200,
+      "end": 232,
+      "entropy": 0.0046856824168142385,
+      "margin": 9.74479219861889,
+      "kl_uniform2": 3.6472198416959145e-07,
+      "kl_boost25": 3.74603558839226e-07,
+      "kl_reduction": -9.881574669634574e-09
+    }
+  ],
+  "limitation": "Small, correlated block sample; Pearson correlations are descriptive. Local one-token perturbation does not measure final answer accuracy or establish reasoning detection."
+}

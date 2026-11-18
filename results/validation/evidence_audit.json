@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "audited_utc": "2026-11-18T17:41:04.568517+00:00",
+  "gsm8k_records": 120,
+  "paired_questions": 20,
+  "missing_records": 0,
+  "humaneval_programs_and_scores": 32,
+  "checks": [
+    "unique predetermined examples",
+    "token counts",
+    "cache dimensions and buffers",
+    "recomputed storage",
+    "causal allocation budget",
+    "answer rescoring",
+    "summary counts",
+    "disjoint calibration split",
+    "program/test execution hashes"
+  ],
+  "prediction_sha256": "cda0408264dff50e13434d4d88658bdae73077d11ba928c2ab42b398cdc75e23"
+}
