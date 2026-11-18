@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ra-kvc"
+version = "0.1.0"
+description = "Budget-constrained uncertainty-adaptive KV-cache fake quantization"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "matplotlib>=3.7", "reportlab>=4.0"]
+
+[project.optional-dependencies]
+llm = ["torch>=2.5,<3", "transformers==4.46.3", "huggingface-hub==0.26.2", "tokenizers==0.20.3", "safetensors>=0.4.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

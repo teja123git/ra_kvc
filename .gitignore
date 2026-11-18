@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.ipynb_checkpoints/
+data/cache/
+models/
+*.safetensors
+*.bin
+.env
+tmp/
+
+/slides/
+*Speaking_Script*
