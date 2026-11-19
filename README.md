@@ -17,7 +17,7 @@ We held the model, prompts and channel ranking fixed across the mixed-precision 
 
 ## What we found
 
-We ran Qwen2.5-0.5B-Instruct on CPU with greedy decoding. Each policy answered the same 20 GSM8K test questions with a limit of 256 new tokens.
+We ran Qwen2.5-0.5B-Instruct on CPU with greedy decoding. Each policy answered the same 20 GSM8K test questions with a limit of new 256 tokens.
 
 | Policy | Correct answers | Responses that reached the token limit |
 |---|---:|---:|
