@@ -4,7 +4,7 @@ Uncertainty-guided precision allocation under a storage budget
 
 DA4022 Hardware-Aware Deep Learning, IIT Guwahati
 
-**Evidence status:** complete; 20 paired GSM8K questions; model Qwen/Qwen2.5-0.5B-Instruct.
+**Evidence status:** complete; 20 paired GSM8K questions, model Qwen/Qwen2.5-0.5B-Instruct.
 
 **Team:** Kondapi Venkata Dhruv (230122024); Mathangi Venkatraman Srinivasan (230121037); Venkat Sai Teja Kalluri (230121032); Sanjay G (230121049); Vipul Sharma (230103117)
 
