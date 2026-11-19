@@ -214,9 +214,9 @@ def main():
         "The measured pilot and reproducible implementation provide a concrete basis for further evaluation. They do not establish that entropy detects reasoning or that the simulation achieves real low-bit inference speedups. The next useful experiment is a larger paired GPU run with longer completion limits and tightly matched realized storage."
     ])
     section("12. Individual contributions", [
-        "The project assigns one technical workstream and a 20% share of the planned workload to each member. Each workstream includes implementation review, validation and preparation of the corresponding report and presentation material. The team should confirm individual contributions before submission. The implementation and draft materials were prepared with AI assistance."
-    ], table=[["Member and roll number", "Technical responsibility", "Assigned share"]]+[
-        [name+"\n"+roll, responsibility, "20%"] for name,roll,responsibility in TEAM], widths=[180,240,85])
+        "Our team divided the work across five technical areas."
+    ], table=[["Member and roll number", "Technical responsibility"]]+[
+        [name+"\n"+roll, responsibility] for name,roll,responsibility in TEAM], widths=[210,295])
     references = [
         "[1] Xia et al. Kitty: Accurate and Efficient 2-bit KV Cache Quantization with Dynamic Channel-wise Precision Boost. arXiv:2511.18643, 2025. https://arxiv.org/abs/2511.18643",
         "[2] Chen et al. Sequoia: Scalable and Robust Speculative Decoding. NeurIPS 2024. https://proceedings.neurips.cc/paper_files/paper/2024/hash/ea1f5f0878d43ff4fb8bf64ef4a2326c-Abstract-Conference.html",
@@ -249,29 +249,28 @@ def main():
                 md.extend([f"![{caption}]({relative})", ""])
     (output/"RA_KVC_Report.md").write_text("\n".join(md))
 
-    font_path = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
-    bold_path = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
+    font_path = Path("/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf")
+    bold_path = Path("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf")
     if font_path.exists() and bold_path.exists():
         pdfmetrics.registerFont(TTFont("ReportBody", str(font_path)))
         pdfmetrics.registerFont(TTFont("ReportBold", str(bold_path)))
         pdfmetrics.registerFontFamily("ReportBody", normal="ReportBody", bold="ReportBold")
         font, bold = "ReportBody", "ReportBold"
     else:
-        font, bold = "Helvetica", "Helvetica-Bold"
+        font, bold = "Times-Roman", "Times-Bold"
     styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(name="BodyRA", fontName=font, fontSize=9.5, leading=14, spaceAfter=9, textColor=colors.HexColor("#253147")))
-    styles.add(ParagraphStyle(name="HeadingRA", fontName=bold, fontSize=15, leading=19, spaceBefore=6, spaceAfter=13, textColor=colors.HexColor("#083F4A")))
-    styles.add(ParagraphStyle(name="TitleRA", fontName=bold, fontSize=25, leading=31, spaceAfter=16, textColor=colors.HexColor("#083F4A")))
-    styles.add(ParagraphStyle(name="SmallRA", fontName=font, fontSize=8, leading=11, spaceAfter=8, textColor=colors.HexColor("#526277")))
-    styles.add(ParagraphStyle(name="CellRA", fontName=font, fontSize=8, leading=11, textColor=colors.HexColor("#253147")))
+    styles.add(ParagraphStyle(name="BodyRA", fontName=font, fontSize=10, leading=14, spaceAfter=9, textColor=colors.HexColor("#222222")))
+    styles.add(ParagraphStyle(name="HeadingRA", fontName=bold, fontSize=15, leading=19, spaceBefore=6, spaceAfter=13, textColor=colors.HexColor("#253448")))
+    styles.add(ParagraphStyle(name="TitleRA", fontName=bold, fontSize=25, leading=31, spaceAfter=16, textColor=colors.HexColor("#253448")))
+    styles.add(ParagraphStyle(name="SmallRA", fontName=font, fontSize=8, leading=11, spaceAfter=8, textColor=colors.HexColor("#535861")))
+    styles.add(ParagraphStyle(name="CellRA", fontName=font, fontSize=8, leading=11, textColor=colors.HexColor("#222222")))
     styles.add(ParagraphStyle(name="HeaderRA", fontName=bold, fontSize=8, leading=11, textColor=colors.white))
     escape = lambda text: html.escape(str(text)).replace("\n", "<br/>")
     story = [Spacer(1, 45), Paragraph(title, styles["TitleRA"]), Paragraph(subtitle, styles["HeadingRA"]),
              Spacer(1, 8), Paragraph("DA4022 &nbsp;|&nbsp; Hardware-Aware Deep Learning<br/>Indian Institute of Technology Guwahati", styles["BodyRA"]), Spacer(1, 15)]
     for name, roll, _ in TEAM:
         story.append(Paragraph(escape(name+"   "+roll), styles["BodyRA"]))
-    story.extend([Spacer(1, 15), Paragraph(escape(f"Executed study: {cfg['model']}, {n} paired GSM8K questions. Evidence status: {summary['status']}."), styles["SmallRA"]),
-                  Paragraph("Accuracy measurements, analytical storage projections and unexecuted extensions are identified separately.", styles["SmallRA"]), PageBreak()])
+    story.append(PageBreak())
     for index, sec in enumerate(sections):
         if index and sec["title"] not in ("References", "11. Conclusion", "1. Introduction and research question"):
             story.append(PageBreak())
@@ -282,11 +281,11 @@ def main():
             cells = [[Paragraph(escape(v), styles["HeaderRA"] if r==0 else styles["CellRA"]) for v in row] for r,row in enumerate(sec["table"])]
             widths = [v*0.98 for v in sec["widths"]] if sec["widths"] else None
             table = Table(cells, colWidths=widths, repeatRows=1, hAlign="LEFT")
-            table.setStyle(TableStyle([("BACKGROUND", (0,0), (-1,0), colors.HexColor("#083F4A")),
-                                       ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.HexColor("#F0F5F5"), colors.white]),
+            table.setStyle(TableStyle([("BACKGROUND", (0,0), (-1,0), colors.HexColor("#253448")),
+                                       ("ROWBACKGROUNDS", (0,1), (-1,-1), [colors.HexColor("#F2F3F4"), colors.white]),
                                        ("VALIGN", (0,0), (-1,-1), "TOP"), ("TOPPADDING", (0,0),(-1,-1),7),
                                        ("BOTTOMPADDING",(0,0),(-1,-1),7), ("LEFTPADDING",(0,0),(-1,-1),7),
-                                       ("LINEBELOW",(0,0),(-1,0),0.5,colors.HexColor("#083F4A"))]))
+                                       ("LINEBELOW",(0,0),(-1,0),0.5,colors.HexColor("#253448"))]))
             story.extend([table, Spacer(1, 13)])
         for image, caption in sec["figures"]:
             if image.exists():
@@ -299,9 +298,9 @@ def main():
                                            Paragraph(escape(caption), styles["SmallRA"])]))
     def footer(canvas, doc):
         canvas.saveState()
-        canvas.setStrokeColor(colors.HexColor("#D6E1E3")); canvas.line(48, 37, A4[0]-48, 37)
-        canvas.setFont(font, 8); canvas.setFillColor(colors.HexColor("#526277"))
-        canvas.drawString(48, 24, "RA-KVC | DA4022 | Measured pilot and analytical storage model")
+        canvas.setStrokeColor(colors.HexColor("#AEB2B8")); canvas.line(48, 37, A4[0]-48, 37)
+        canvas.setFont(font, 8); canvas.setFillColor(colors.HexColor("#535861"))
+        canvas.drawString(48, 24, "RA-KVC   |   DA4022 Hardware-Aware Deep Learning")
         canvas.drawRightString(A4[0]-48, 24, str(doc.page)); canvas.restoreState()
     doc = SimpleDocTemplate(str(output/"RA_KVC_Report.pdf"), pagesize=A4,
                             rightMargin=48, leftMargin=48, topMargin=44, bottomMargin=50,

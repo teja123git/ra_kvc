@@ -211,15 +211,15 @@ The measured pilot and reproducible implementation provide a concrete basis for 
 
 ## 12. Individual contributions
 
-The project assigns one technical workstream and a 20% share of the planned workload to each member. Each workstream includes implementation review, validation and preparation of the corresponding report and presentation material. The team should confirm individual contributions before submission. The implementation and draft materials were prepared with AI assistance.
+Our team divided the work across five technical areas.
 
-| Member and roll number | Technical responsibility | Assigned share |
-| --- | --- | --- |
-| Kondapi Venkata Dhruv 230122024 | Quantizer, channel selection and fixed baselines | 20% |
-| Mathangi Venkatraman Srinivasan 230121037 | Uncertainty signals and sensitivity diagnostic | 20% |
-| Venkat Sai Teja Kalluri 230121032 | Budget controller and cache integration | 20% |
-| Sanjay G 230121049 | Evaluation, scoring, statistics and plots | 20% |
-| Vipul Sharma 230103117 | Storage accounting and hardware analysis | 20% |
+| Member and roll number | Technical responsibility |
+| --- | --- |
+| Kondapi Venkata Dhruv 230122024 | Quantizer, channel selection and fixed baselines |
+| Mathangi Venkatraman Srinivasan 230121037 | Uncertainty signals and sensitivity diagnostic |
+| Venkat Sai Teja Kalluri 230121032 | Budget controller and cache integration |
+| Sanjay G 230121049 | Evaluation, scoring, statistics and plots |
+| Vipul Sharma 230103117 | Storage accounting and hardware analysis |
 
 ## References
 
