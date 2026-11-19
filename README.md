@@ -4,7 +4,7 @@
 
 When a language model writes an answer, it generates one token at a time. At each attention layer, it saves **keys** that help it find relevant earlier tokens and **values** that carry information from those tokens. Reusing these vectors saves computation, but every new token makes the key-value (KV) cache larger. A long answer therefore needs more cache memory even though the model weights stay the same.
 
-We studied whether the model could use its own uncertainty to decide **when extra cache precision is worth spending**. Storing a number with two bits gives it only four possible levels. Four bits gives it sixteen, so it can retain more detail, at a higher storage cost. Our project tested whether changing which blocks receive that extra precision helps the model finish a math problem correctly.
+We studied whether the model could use its own uncertainty to decide **when extra cache precision is worth spending**. Storing a number with two bits gives it only four possible levels because there are 4 permutations. Four bits gives it sixteen, so it can retain more detail, at a higher storage cost. Our project tested whether changing which blocks receive that extra precision helps the model finish a math problem correctly.
 
 ## How RA-KVC works
 
