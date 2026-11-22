@@ -6,7 +6,7 @@
 
 Autoregressive language models generate responses one token at a time. During generation, each attention layer maintains a **key-value (KV) cache** containing representations of previously processed tokens. Keys determine how new tokens attend to earlier context, while values provide the information retrieved through attention.
 
-Caching these representations avoids repeatedly computing them, but memory consumption grows with every generated token. For long sequences, the KV cache can become a significant memory bottleneck, motivating compression techniques that reduce storage without substantially degrading generation quality.
+Caching these representations avoids repeatedly computing them, but memory consumption grows with every generated token. For long sequences, the KV cache can become a significant memory bottleneck, motivating compression techniques that reduce storage without substantially degrading generation quality .
 
 **Reasoning-Adaptive Key-Value Cache Compression (RA-KVC)** investigates whether a language model's own uncertainty can guide the allocation of cache precision. The central idea is simple: not every cached representation necessarily requires the same numerical precision. If certain blocks are more sensitive to quantization errors, allocating additional bits to them could potentially preserve more useful information.
 
