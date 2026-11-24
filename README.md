@@ -142,7 +142,7 @@ See the [project report](report/RA_KVC_Report.pdf) for the derivations, detailed
 | `scripts/` | Benchmark execution, scoring, validation, and analysis scripts |
 | `configs/` | Experiment configurations |
 | `tests/` | Tests for quantization, cache behavior, budget accounting, and scoring |
-| `report/` | Detailed project report |
+| `report/` | Detailed project report and presentation|
 
 Generation-length plots are available under `results/length_check/figures/`.
 
